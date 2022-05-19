@@ -8,12 +8,12 @@ namespace PII_Herencia
         protected string Bio {get; set;}
         protected int MaxCapacity {get; set;}
        
-        public Driver(string ID, string name, string surename, string vehicle, string bio, int maxCapacity): base (ID, name, surename)
+        public Driver(string ID, string name, string surename, string vehicle, string bio): base (ID, name, surename)
         {
 
             this.Vehicle=vehicle;
             this.Bio=bio;
-            this.MaxCapacity=maxCapacity;
+            this.MaxCapacity=1;
         }
 
         private IList passengersOnBoard = new ArrayList();
@@ -23,6 +23,7 @@ namespace PII_Herencia
             if (passengersOnBoard.Count <= this.MaxCapacity)
             {
                 passengersOnBoard.Add(pas);
+                Console.WriteLine("OK! Ha tomado el Ride");
             }
             else
             {

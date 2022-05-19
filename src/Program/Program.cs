@@ -10,7 +10,7 @@ namespace PII_Herencia
         {
             UcuRideShare rideShare = new UcuRideShare();
 
-            Person carol= new CommonDriver("1","Carol","Glass","SHB-3032","Suele anda por pocitos",3);
+            Driver carol= new CommonDriver("1","Carol","Glass","SHB-3032","Suele anda por pocitos");
             Person juan= new PoolDriver("49122568", "Juan", "Gomez", "SCB-1030", "Lleva no mas de 3",3);
             Person uno = new Passenger("26134720", "Uno","Perez");
             Person dos= new Passenger("26134720", "Dos","Gonzalez");
@@ -19,11 +19,15 @@ namespace PII_Herencia
             
             rideShare.Add(uno);
             
-            Console.WriteLine(carol.Name, carol.Surename);
+            Console.WriteLine(carol.Name);
+            Console.WriteLine(carol.ID);
+
+
+            carol.takePassenger(uno);
 
 
             var twitter = new TwitterImage();
-            Console.WriteLine(twitter.PublishToTwitter("hey hey", @"PathToImage.png"));
+            Console.WriteLine(twitter.PublishToTwitter("hey hey", @"bill2.jpg"));
 
             /*
             En éste método deberas mostrar un ejemplo de funcionamiento de tu programa an pseudocódigo. A continuación te 

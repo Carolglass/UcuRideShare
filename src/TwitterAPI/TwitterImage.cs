@@ -42,14 +42,17 @@ namespace PII_Herencia
             try
             {
                 // first, upload the image
+               
                 string mediaID = string.Empty;
                 var rezImage = Task.Run(async () =>
                 {
+                     System.Console.WriteLine("11111111111111111111111111"+pathToImage);
                     var response = await TweetImage(pathToImage);
                     return response;
                 });
+                 System.Console.WriteLine("aaaaaa"+ rezImage);
                 var rezImageJson = JObject.Parse(rezImage.Result.Item2);
-
+System.Console.WriteLine("22222222222222222222222222222222222222");
                 if (rezImage.Result.Item1 != 200)
                 {
                     try // return error from JSON
@@ -63,7 +66,7 @@ namespace PII_Herencia
                     }
                 }
                 mediaID = rezImageJson["media_id_string"].Value<string>();
-
+System.Console.WriteLine("3333333333333333333333333333333333");
                 // second, send the text with the uploaded image
                 var rezText = Task.Run(async () =>
                 {
